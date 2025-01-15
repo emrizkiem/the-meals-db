@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryListView: View {
   @ObservedObject var viewModel: CategoryViewModel
+  @StateObject private var toastManager = ToastManager()
   
   var body: some View {
     VStack {
@@ -22,7 +23,7 @@ struct CategoryListView: View {
           .textFieldStyle(RoundedBorderTextFieldStyle())
         
         List(viewModel.filteredCategories) { category in
-          CategoryView(category: category)
+          CategoryView(category: category, toastManager: toastManager)
         }
       }
       
@@ -35,5 +36,8 @@ struct CategoryListView: View {
     .onAppear {
       viewModel.fetchCategories()
     }
+    .overlay(
+      ToastView(toastManager: toastManager)
+    )
   }
 }
