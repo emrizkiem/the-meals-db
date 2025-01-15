@@ -19,3 +19,8 @@ git clone https://github.com/emrizkiem/the-meals-db.git
 
 #### Data Source : 
 - https://www.themealdb.com/api/json/v1/1/categories.php
+
+
+## License
+
+SurosowanCyber is available under the MIT license. See the LICENSE file for more info.
