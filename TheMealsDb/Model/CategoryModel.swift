@@ -12,8 +12,10 @@ struct CategoryResponse: Codable {
 }
 
 struct CategoryModel: Identifiable, Codable {
-  var id: String { strCategory }
+  let idCategory: String
   let strCategory: String
-  let strCategoryThumb: String
   let strCategoryDescription: String
+  let strCategoryThumb: String
+  
+  var id: String { strCategory }
 }

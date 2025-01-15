@@ -18,10 +18,14 @@ struct ToastView: View {
           .background(Color.black.opacity(0.7))
           .foregroundColor(.white)
           .transition(.move(edge: .bottom))
-          .animation(.easeInOut)
       }
     }
     .padding(.bottom, 50)
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+    .onChange(of: toastManager.isShowing) { isShowing in
+      withAnimation(.easeInOut) {
+        _ = isShowing
+      }
+    }
   }
 }

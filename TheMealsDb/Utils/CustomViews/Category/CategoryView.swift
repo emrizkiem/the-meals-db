@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CategoryView: View {
   var category: CategoryModel
-  @ObservedObject var toastManager: ToastManager
   
   var body: some View {
     HStack {
@@ -30,8 +29,5 @@ struct CategoryView: View {
       Spacer()
     }
     .padding()
-    .onTapGesture {
-      toastManager.show(message: "You tapped on \(category.strCategory)")
-    }
   }
 }
